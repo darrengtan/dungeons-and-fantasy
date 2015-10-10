@@ -28,14 +28,14 @@ def runGame():
   #load basic game prompts
   g_prompt = com.parseData("game_prompts.json")['text']
 
-  main_menu = g_prompt['main']['prompt']
+  main_menu = g_prompt['main']#['prompt']
 
   #main game loop
   while True:
     game_mode = com.cli(main_menu)
     #switchcase equiv
-    choice = (x for x in xyz if x in a)
-    if   word in response[0] for word in game_mode: #'1' in game_mode:
+    # choice = (x for x in xyz if x in a)
+    if '1' in game_mode:
       print "good choice! you chose New Game!"
       modes.newChar()
     elif '2' in game_mode:
