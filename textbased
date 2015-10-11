@@ -33,21 +33,25 @@ def runGame():
   #main game loop
   while True:
     game_mode = com.cli(main_menu)
+
+    modes.funcs[game_mode](g_prompt)
+
     #switchcase equiv
     # choice = (x for x in xyz if x in a)
-    if '1' in game_mode:
-      print "good choice! you chose New Game!"
-      modes.newChar()
-    elif '2' in game_mode:
-      print "You chose Load Game!"
-      modes.loadChar()
-    elif '3' in game_mode:
-      print "You chose Options!"
-      options()
-    elif '4' in game_mode:
-      sys.exit(0)
-    else:
-      print "not a valid option\n"
+    # if '1' in game_mode:
+    #   print "good choice! you chose New Game!"
+    #   modes.newChar()
+    # elif '2' in game_mode:
+    #   print "You chose Load Game!"
+    #   modes.loadChar()
+    # elif '3' in game_mode:
+    #   print "You chose Options!"
+    #   options()
+    # elif '4' in game_mode:
+    #   sys.exit(0)
+    # else:
+    #   print "not a valid option\n"
+
 
 if __name__ == "__main__":
     runGame()

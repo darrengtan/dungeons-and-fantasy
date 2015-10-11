@@ -1,1 +1,43 @@
-{"text":{"main":{"prompt":"Welcome to the Game!\nPlease choose your choice:\n1. New Game\n2. Load Game\n3. Options\n4. Exit\n","response":[]},"name":{"prompt":"What is your Name?","response":[]},"job":{"prompt":"What is your Quest?\n1. To seek the Holy Grail\n2. To discover the magical mysteries of magic\n3. To find shiny things","response":[]},"battle":{"prompt":"1. Attack\n2. Skills\n3. Items\n4. Flee","response":[]}}}
+{
+  "text": {
+    "main": {
+      "prompt": "Welcome to the Game!\nPlease choose your choice:\n",
+      "response": [
+        "1. New Game",
+        "2. Load Game",
+        "3. Options",
+        "4. Exit"
+      ],
+      "action": [
+        "newChar",
+        "loadChar",
+        "options",
+        "exit"
+      ]
+    },
+    "name": {
+      "prompt": "What is your Name?",
+      "response": [],
+      "action": []
+    },
+    "job": {
+      "prompt": "What is your Quest?\n",
+      "response": [
+        "1. To seek the Holy Grail",
+        "2. To discover the magical mysteries of magic",
+        "3. To find shiny things"
+      ],
+      "action": ["1", "2", "3"]
+    },
+    "battle": {
+      "prompt": "",
+      "response": [
+        "1. Attack",
+        "2. Skills",
+        "3. Items",
+        "4. Flee"
+      ],
+      "action": []
+    }
+  }
+}

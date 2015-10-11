@@ -66,7 +66,7 @@ def battleMode(pc):
     print "You have defeated the", enemy.Name
     pc.expUp(enemy.LVL * 10)
 
-def enterDungeon(pc):
+def enterDungeon(pc, prompt):
   #load rng dungeon
   #dungeon = createDungeon()
 
@@ -87,12 +87,12 @@ def enterDungeon(pc):
     if 'exit' in action:
       break
 
-def newChar():
-  name = com.cli("What is your Name?")
+def newChar(prompt):
+  name = com.cli(prompt["name"])
   char = CS(" ".join(name))
   print "Your name is", char.Name, '\n'
 
-  job  = com.cli("What is your Quest?\n1. To seek the Holy Grail\n2. To discover the magical mysteries of magic\n3. To find shiny things")
+  job  = com.cli(prompt["job"])
   if '1' in job:
     char.assignClass("Warrior")
   elif '2' in job:
@@ -110,7 +110,7 @@ def newChar():
   print "Allocate your stat points"
   char.allocPts(pts_new)
 
-  enterDungeon(char)
+  enterDungeon(char, prompt)
 
 def saveChar(pc):
   import os.path
@@ -130,11 +130,13 @@ def saveChar(pc):
   f.write('\"S\":{')
   for key, val in pc.S.items():    #fix
     f.write()
+  #}
   f.write(',')
   f.write('\"LVL\":' + pc.LVL + ',')
   f.write('\"EXP\":' + pc.EXP + ',')
   f.write('\"HP\":' + pc.HP + ',')  #fix
   f.write('\"MP\":' + pc.MP + ',')  #fix
+  f.write('}')
 
   f.close()
 
@@ -145,3 +147,11 @@ def loadChar():
 
   #else
 
+funcs = {
+  "loadChar": loadChar,
+  "saveChar": saveChar,
+  "newChar": newChar,
+  "enterDungeon": enterDungeon,
+  "battleMode": battleMode,
+  "createDungeon": createDungeon
+}
